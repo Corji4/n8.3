@@ -18,3 +18,19 @@ private:
 	int *element;
 };
 
+class matrix
+{
+public:
+	matrix();
+	~matrix();
+	void set_length(int n);
+	void set_heigth(int n);
+	void print();
+	friend istream& operator>> (istream &in, matrix &point);
+private:
+	static int count;
+	int length;
+	int heigth;
+	string name;
+	vector *element;
+};

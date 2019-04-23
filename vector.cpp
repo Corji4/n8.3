@@ -3,6 +3,7 @@
 vector::vector()
 {
 	this->size = 0;
+	this->element = NULL;
 }
 
 vector::~vector()
