@@ -1,2 +1,3 @@
-﻿  matrix.cpp
+﻿  main.cpp
+c:\users\corji4\source\repos\n8.3\n8.3\main.cpp(6): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   n8.3.vcxproj -> C:\Users\Corji4\source\repos\n8.3\Debug\n8.3.exe

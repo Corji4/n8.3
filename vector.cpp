@@ -36,16 +36,61 @@ void vector::set_size(int s)
 
 int vector::operator[] (int i)
 {
-	if (i <= 0)
+	try
 	{
-		return this->element[0];
+		if (i <= 0 || i >= this->size)
+		{
+			throw 0;
+		}
 	}
-	else if (i >= this->size)
-	{
-		return this->element[this->size - 1];
-	}
-	else
+	catch (int i)
 	{
 		return this->element[i];
+	};
+	return this->element[i];
+}
+
+void vector::random()
+{
+	this->element = new int[this->size];
+	for (int i = 0; i < this->size; i++)
+	{
+		this->element[i] = rand() % 10;
+	}
+}
+
+int vector::get(int i)
+{
+	if (i >= 0 && i < this->size)
+	{
+		return this->element[i];
+	}
+}
+
+void vector::set(int i, int number)
+{
+	if (i >= 0 && i < this->size)
+	{
+		this->element[i] = number;
+	}
+}
+
+vector vector::operator+ (vector second)
+{
+	vector result;
+	result.element = new int[this->size];
+	result.size = this->size;
+	for (int i = 0; i < this->size; i++)
+	{
+		result.element[i] = this->element[i] + second.element[i];
+	}
+	return result;
+}
+
+void vector::operator= (vector second)
+{
+	for (int i = 0; i < this->size; i++)
+	{
+		this->element[i] = second.element[i];
 	}
 }
