@@ -18,7 +18,7 @@ vector::vector(vector *copy)
 
 vector::~vector()
 {
-	//delete [] this->element;
+	delete [] this->element;
 }
 
 istream& operator>> (istream &in, vector &point)
@@ -47,19 +47,35 @@ void vector::set_size(int s)
 
 int vector::operator[] (int i)
 {
-	if (i <= 0)
+	try
 	{
-		return this->element[0];
+		if (i <= 0 || i >= this->size)
+		{
+			throw 0;
+		}
 	}
-	else if (i >= this->size)
+	catch (int i)
 	{
-		return this->element[this->size - 1];
+		return this->element[i];
+	};
+	return this->element[i];
+}
+
+void vector::random()
+{
+	this->element = new int[this->size];
+	for (int i = 0; i < this->size; i++)
+	{
+		this->element[i] = rand() % 10;
 	}
-	else
+}
+
+int vector::get(int i)
+{
+	if (i >= 0 && i < this->size)
 	{
 		return this->element[i];
 	}
-<<<<<<< HEAD
 }
 
 void vector::set(int i, int number)
@@ -84,22 +100,11 @@ vector vector::operator+ (vector second)
 
 void vector::operator= (vector second)
 {
+	delete [] this->element;
+	this->size = second.size;
+	this->element = new int[this->size];
 	for (int i = 0; i < this->size; i++)
 	{
 		this->element[i] = second.element[i];
 	}
-}
-
-vector vector::get_copy()
-{
-	vector copy;
-	copy.size = this->size;
-	copy.element = new int[this->size];
-	for (int i = 0; i < this->size; i++)
-	{
-		copy.element[i] = this->element[i];
-	}
-	return copy;
-=======
->>>>>>> parent of 1c31f9e... финал
 }
