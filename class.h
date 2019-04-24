@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
-#include <time.h>
 
 using namespace std;
 
@@ -12,15 +11,15 @@ public:
 	vector(vector *copy);
 	~vector();
 	void print();
-	void random();
 	void set_size(int s);
-	int get(int i);
-	void set(int i, int number);
 	friend istream& operator>> (istream &in, vector &point);
 	int operator[] (int i);
+<<<<<<< HEAD
 	vector operator+ (vector second);
 	void operator= (vector second);
 	vector get_copy();
+=======
+>>>>>>> parent of 1c31f9e... финал
 private:
 	int size;
 	int *element;
@@ -34,15 +33,8 @@ public:
 	~matrix();
 	void set_length(int n);
 	void set_heigth(int n);
-	void e(matrix &second);
 	void print();
-	vector operator[] (int i);
 	friend istream& operator>> (istream &in, matrix &point);
-	void operator= (matrix second);
-	matrix operator+ (matrix second);
-	matrix operator* (matrix second);
-	void operator+= (matrix second);
-	void power(int n);
 private:
 	static int count;
 	int length;

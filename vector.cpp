@@ -47,35 +47,19 @@ void vector::set_size(int s)
 
 int vector::operator[] (int i)
 {
-	try
+	if (i <= 0)
 	{
-		if (i <= 0 || i >= this->size)
-		{
-			throw 0;
-		}
+		return this->element[0];
 	}
-	catch (int i)
+	else if (i >= this->size)
 	{
-		return this->element[i];
-	};
-	return this->element[i];
-}
-
-void vector::random()
-{
-	this->element = new int[this->size];
-	for (int i = 0; i < this->size; i++)
-	{
-		this->element[i] = rand() % 10;
+		return this->element[this->size - 1];
 	}
-}
-
-int vector::get(int i)
-{
-	if (i >= 0 && i < this->size)
+	else
 	{
 		return this->element[i];
 	}
+<<<<<<< HEAD
 }
 
 void vector::set(int i, int number)
@@ -116,4 +100,6 @@ vector vector::get_copy()
 		copy.element[i] = this->element[i];
 	}
 	return copy;
+=======
+>>>>>>> parent of 1c31f9e... финал
 }
