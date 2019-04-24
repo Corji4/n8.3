@@ -6,8 +6,19 @@ vector::vector()
 	this->element = NULL;
 }
 
+vector::vector(vector *copy)
+{
+	this->size = copy->size;
+	this->element = new int[this->size];
+	for (int i = 0; i < this->size; i++)
+	{
+		this->element[i] = copy->element[i];
+	}
+}
+
 vector::~vector()
 {
+	//delete [] this->element;
 }
 
 istream& operator>> (istream &in, vector &point)
@@ -93,4 +104,16 @@ void vector::operator= (vector second)
 	{
 		this->element[i] = second.element[i];
 	}
+}
+
+vector vector::get_copy()
+{
+	vector copy;
+	copy.size = this->size;
+	copy.element = new int[this->size];
+	for (int i = 0; i < this->size; i++)
+	{
+		copy.element[i] = this->element[i];
+	}
+	return copy;
 }

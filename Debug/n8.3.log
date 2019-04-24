@@ -1,3 +1,7 @@
 ﻿  main.cpp
 c:\users\corji4\source\repos\n8.3\n8.3\main.cpp(6): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  matrix.cpp
+  vector.cpp
+  Generating Code...
+c:\users\corji4\source\repos\n8.3\n8.3\vector.cpp(79): warning C4715: 'vector::get': not all control paths return a value
   n8.3.vcxproj -> C:\Users\Corji4\source\repos\n8.3\Debug\n8.3.exe

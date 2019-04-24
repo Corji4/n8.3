@@ -22,8 +22,31 @@ matrix::matrix()
 	}
 }
 
+matrix::matrix(matrix *copy)
+{
+	count++;
+	int x = count;
+	string number = "";
+	while (x)
+	{
+		number += x % 10 + 48;
+		x /= 10;
+	}
+	reverse(number.begin(), number.end());
+	this->name = "Матрица " + number;
+	this->heigth = copy->heigth;
+	this->length = copy->length;
+	this->element = new vector[this->heigth];
+	for (int i = 0; i < this->heigth; i++)
+	{
+		this->element[i].set_size(this->length);
+		this->element[i] = copy->element[i].get_copy();
+	}
+}
+
 matrix::~matrix()
 {
+	delete [] this->element;
 }
 
 int matrix::count = 0;
